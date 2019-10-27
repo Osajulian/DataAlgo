@@ -8,16 +8,13 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  const reversedStr = str
-    .split('')
-    .reverse()
-    .join('');
-
-  //   return str === reversedStr;
-  // test execution time 4.994s
-
-  // test execution time = 4.784s
-  return reversedStr.includes(str);
-}
+    // not a great solution because the every method does double
+    // comparism - comparing characters from one end to characters
+    // on the other end and then repeating the process from the other
+    // end of the string.
+    return str.split('').every((char, i) => {
+      return char === str[str.length - i - 1];
+    });
+  }
 
 module.exports = palindrome;
