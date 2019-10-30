@@ -8,13 +8,23 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-    // not a great solution because the every method does double
-    // comparism - comparing characters from one end to characters
-    // on the other end and then repeating the process from the other
-    // end of the string.
-    return str.split('').every((char, i) => {
-      return char === str[str.length - i - 1];
-    });
-  }
+  const reversed = str
+    .split('')
+    .reverse()
+    .join('');
+
+  return str === reversed;
+}
 
 module.exports = palindrome;
+
+// This second solution is not a great solution because the every method does double
+// comparism - comparing characters from one end to characters
+// on the other end and then repeating the process from the other
+// end of the string.
+
+// function palindrome(str) {
+//     return str.split('').every((char, i) => {
+//       return char === str[str.length - i - 1];
+//     });
+//   }
