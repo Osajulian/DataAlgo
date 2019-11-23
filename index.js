@@ -8,7 +8,7 @@
 function maxChar(str) {
   const chars = {};
   for (let char of str) {
-    chars[char] = chars[char] ? 1 : +1;
+    chars[char] = chars[char] + 1 || 1;
   }
   return chars;
 }
